@@ -14,12 +14,12 @@ from sklearn.model_selection import train_test_split
 # --- 1. Data Loading and Preprocessing ---
 print("--- Starting Data Loading and Preprocessing ---")
 
-# Placeholder for the dataset file path.
+
 DATASET_PATH = 'Reviews.csv'
 
 # --- Memory Optimization: Limit the number of reviews processed ---
 MAX_REVIEWS_TO_PROCESS = 20000 
-VALIDATION_SPLIT = 0.1 # 10% of the data for validation
+VALIDATION_SPLIT = 0.1
 
 # Check if the dataset file exists
 if not os.path.exists(DATASET_PATH):
@@ -53,7 +53,7 @@ EOR_TOKEN = '<EOR>'
 cleaned_texts = [clean_text(text) + ' ' + EOR_TOKEN for text in text_data if clean_text(text)]
 
 # --- 2. Tokenization and Sequence Generation ---
-# Define model hyperparameters (moved to an earlier section for proper scope)
+# Define model hyperparameters
 EMBEDDING_DIM = 128
 LSTM_UNITS = 256
 DROPOUT_RATE = 0.2
